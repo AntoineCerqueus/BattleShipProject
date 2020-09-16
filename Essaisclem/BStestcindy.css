@@ -1,0 +1,37 @@
+#plateau {
+    background-color: seagreen;
+    width: 20vw;
+    height:10vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#case1  {
+    background-color: darkslategray;
+    width: 30px;
+    height: 30px;
+    border: solid black 1px;
+}
+
+#case2  {
+    background-color: darkslategray;
+    width: 30px;
+    height: 30px;
+    border: solid black 1px;
+}
+
+#case3  {
+    background-color: darkslategray;
+    width: 30px;
+    height: 30px;
+    border: solid black 1px;
+}
+
+#case4  {
+    background-color: darkslategray;
+    width: 30px;
+    height: 30px;
+    border: solid black 1px;
+}
