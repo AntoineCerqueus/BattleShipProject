@@ -83,8 +83,9 @@ gameBoardContainer2.addEventListener('click',(event) => {
 	// console.log(x.id);
 	document.getElementById(x.id*1+1).classList.add('bateau');
 	document.getElementById(x.id*1+2).classList.add('bateau');
-	document.getElementById(x.id*1+3).classList.add('bateau');
-	console.log(document.getElementById(x.id*1+3));
+    document.getElementById(x.id*1+3).classList.add('bateau');
+    document.getElementById(x.id*1+4).classList.add('bateau');
+	console.log(document.getElementById(x.id*1+4));
 	// console.log(x.id*1+1);
 });
 
