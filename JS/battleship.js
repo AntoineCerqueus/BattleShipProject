@@ -42,7 +42,9 @@ var squareSize = 40;
 // get the container element
 var gameBoardContainer2 = document.getElementById("gameboard2");
 
-let counter1 = 100;
+// Give square ids separate enough to avoid conflicts with the other grid
+let counter1 = 200;
+
 // make the grid columns and rows
 for (i = 0; i < cols; i++) {
 	for (j = 0; j < rows; j++) {
@@ -68,15 +70,20 @@ for (i = 0; i < cols; i++) {
 // ================================
 // INTERACTIVE gameBoardContainer
 // ================================
+let destroyer = document.getElementById('destroyer');
+let submarine = document.getElementById('submarine');
+let cruiser = document.getElementById('cruiser');
+let battleship = document.getElementById('battleship');
+let carrier = document.getElementById('carrier');
+
+// function grabBoat(){
+//     destroyer.addEventListener('click',(event) => {
+//         console.log(event.target);
+//         event.target.draggable
+// }};
 
 
-
-// gameBoardContainer2.addEventListener('mouseOver', (event) => {
-	
-
-// });
-
-gameBoardContainer2.addEventListener('click',(event) => {
+gameBoardContainer.addEventListener('click',(event) => {
     console.log(event.target);
 	let x = event.target;
 	x.classList.add('bateau');
@@ -86,7 +93,7 @@ gameBoardContainer2.addEventListener('click',(event) => {
     document.getElementById(x.id*1+3).classList.add('bateau');
     document.getElementById(x.id*1+4).classList.add('bateau');
 	console.log(document.getElementById(x.id*1+4));
-	// console.log(x.id*1+1);
+	
 });
 
 
