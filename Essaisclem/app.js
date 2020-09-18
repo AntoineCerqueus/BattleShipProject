@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carrier = document.querySelector('.carrier-container')
     const startButton = document.querySelector('#start')
     const rotateButton = document.querySelector('#rotate')
-    const randomPlacementButton = document.querySelector('#random')
+    const randomPlacementButton = document.getElementById('random')
     const turnDisplay = document.querySelector('#whose-go')
     const infoDisplay = document.querySelector('#info')
     const userSquares = []
@@ -114,8 +114,12 @@ document.addEventListener('DOMContentLoaded', () => {
       generateUser(shipArray[2]) //get cruiser            apply generate function
       generateUser(shipArray[3]) //get battleship
       generateUser(shipArray[4]) //get carrier
-
-
+      
+     
+    
+    randomPlacementButton.addEventListener('click',   location.reload());
+    
+/*
     //Rotate ships
     function rotate() {
       if (isHorizontal) {
@@ -213,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // function dragEnd() {
     //   console.log('dragend')
     // }
+    */
   
     //Game Logic
     function playGame() {
@@ -228,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(computerGo, 1000)
       }
     }
-    startButton.addEventListener('click', playGame)
+    startButton.addEventListener('click', playGame);
   
     let destroyerCount = 0
     let submarineCount = 0
