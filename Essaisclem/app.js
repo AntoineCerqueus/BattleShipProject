@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const battleship = document.querySelector('.battleship-container')
     const carrier = document.querySelector('.carrier-container')
     const startButton = document.querySelector('#start')
-    const rotateButton = document.querySelector('#rotate')
+    // const rotateButton = document.querySelector('#rotate')
     const randomPlacementButton = document.getElementById('random')
+    const hiddenButton =document.getElementById('hidden')
     const turnDisplay = document.querySelector('#whose-go')
     const infoDisplay = document.querySelector('#info')
     const userSquares = []
@@ -19,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let isGameOver = false
     let currentPlayer = 'user'
     const width = 10
+    
+
+ 
   
     //Create Board
     function createBoard(grid, squares) {
@@ -40,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
           [0, 1],
           [0, width]
         ]
+        
       },
       {
         name: 'submarine',
@@ -73,12 +78,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
     //Draw the computers ships in random locations
     function generateComputer(ship) {
+      
       let randomDirection = Math.floor(Math.random() * ship.directions.length)
       let current = ship.directions[randomDirection]
       if (randomDirection === 0) direction = 1
       if (randomDirection === 1) direction = 10
-      let randomStart = Math.abs(Math.floor(Math.random() * computerSquares.length - (ship.directions[0].length * direction)))
-  
+      let randomStart = Math.abs(Math.floor(Math.random() * computerSquares.length - 
+      (ship.directions[0].length * direction)))
+      
       const isTaken = current.some(index => computerSquares[randomStart + index].classList.contains('taken'))
       const isAtRightEdge = current.some(index => (randomStart + index) % width === width - 1)
       const isAtLeftEdge = current.some(index => (randomStart + index) % width === 0)
@@ -86,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!isTaken && !isAtRightEdge && !isAtLeftEdge) current.forEach(index => computerSquares[randomStart + index].classList.add('taken', ship.name))
   
       else generateComputer(ship)
+      
     }
     generateComputer(shipArray[0]) //get destroyer
     generateComputer(shipArray[1]) //get submarine
@@ -117,8 +125,13 @@ document.addEventListener('DOMContentLoaded', () => {
       
      
     
-    randomPlacementButton.addEventListener('click',   location.reload());
-    
+    randomPlacementButton.addEventListener('click', refreshPage);
+    function refreshPage(){
+      window.location.reload();
+     
+  
+  } 
+
 /*
     //Rotate ships
     function rotate() {
@@ -220,20 +233,33 @@ document.addEventListener('DOMContentLoaded', () => {
     */
   
     //Game Logic
-    function playGame() {
+    function playGame() { 
       if (isGameOver) return
       if (currentPlayer === 'user') {
         turnDisplay.innerHTML = 'Your Go'
         computerSquares.forEach(square => square.addEventListener('click', function(e) {
           revealSquare(square)
+          
         }))
+        let audio = new Audio("../ZIC/Desperate-Fight.mp3") ;
+
+
+        audio.play();  
       }
       if (currentPlayer === 'computer') {
         turnDisplay.innerHTML = 'Computers Go'
-        setTimeout(computerGo, 1000)
+        setTimeout(computerGo, 1000);
+        
+        
       }
     }
     startButton.addEventListener('click', playGame);
+    
+  
+
+    
+ 
+
   
     let destroyerCount = 0
     let submarineCount = 0
@@ -329,6 +355,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if ((destroyerCount + submarineCount + cruiserCount + battleshipCount + carrierCount) === 50) {
         infoDisplay.innerHTML = "YOU WIN"
         gameOver()
+        function gameOver(){
+          audio.pause();
+        
+
+        let wine = new Audio("../ZIC/wide.mp3") ;
+
+
+        wine.play();  
+        }
       }
       if ((cpuDestroyerCount + cpuSubmarineCount + cpuCruiserCount + cpuBattleshipCount + cpuCarrierCount) === 50) {
         infoDisplay.innerHTML = "COMPUTER WINS"
@@ -340,4 +375,5 @@ document.addEventListener('DOMContentLoaded', () => {
       isGameOver = true
       startButton.removeEventListener('click', playGame)
     }
+    
   })
