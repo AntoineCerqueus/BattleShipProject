@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carrier = document.querySelector('.carrier-container')
     const startButton = document.querySelector('#start')
     const rotateButton = document.querySelector('#rotate')
-    const randomPlacementButton = document.querySelector('#random')
+    const randomPlacementButton = document.getElementById('random')
     const turnDisplay = document.querySelector('#whose-go')
     const infoDisplay = document.querySelector('#info')
     const userSquares = []
@@ -114,6 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
       generateUser(shipArray[2]) //get cruiser            apply generate function
       generateUser(shipArray[3]) //get battleship
       generateUser(shipArray[4]) //get carrier
+
+      randomPlacementButton.addEventListener('click', console.log('randomuser'), location.reload)
 
 
     //Rotate ships
