@@ -17,15 +17,46 @@ p, button, input {
 }
 
 #container {
+<<<<<<< HEAD
     display: flex;
     justify-content: center;
 }
 
 #gameboard1 {
+=======
+	display: flex;
+	/* justify-content: center; */
+	margin-bottom: 2em;
+}
+
+.bateau{
+	background-color: aqua;
+}
+
+/* .gameboard div{
+	box-sizing: border-box; 
+	border: 1px solid rgb(4, 2, 153);
+	background-color: rgb(13, 139, 223);
+	height: 50px;
+	width: 50px;
+
+} */
+
+/* #userboard {
 	position:relative;
 	margin:0 auto 2em auto;
 	width:500px;
 	height:500px;
+	border: 2px solid rgb(4, 2, 153);
+} */
+
+/* #computerboard {
+>>>>>>> add boats on .html + add a five squared boat on click; numerical ids on both grid, + test dragndrop
+	position:relative;
+	margin:0 auto 2em auto;
+	width:500px;
+	height:500px;
+<<<<<<< HEAD
 }
 
 #gameboard1 div {
@@ -56,3 +87,125 @@ p, button, input {
 	width:50px;
 	height:50px;
 }
+=======
+	border: 2px solid rgb(4, 2, 153);
+} */
+
+#place-boat{
+	position: relative;
+	left: 2em;
+	width: 300px;
+	height: 400px;
+	border: 2px solid rgb(4, 2, 153);
+}
+#gameboard1 {
+	position:relative;
+	left: 6em;
+	border: 2px solid rgb(4, 2, 153);
+	width:400px;
+	height:400px;
+} 
+
+ #gameboard1 div {
+	position:absolute;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;    
+	box-sizing: border-box;         
+	border: 1px solid rgb(4, 2, 153);
+	background-color: rgb(13, 139, 223);
+	width:40px;
+	height:40px;
+}
+
+
+
+#gameboard2 {
+	position:relative;
+	left: 8em;
+	width:400px;
+	height:400px;
+	border: 2px solid rgb(4, 2, 153);
+	cursor:url(../IMG/target.png), auto;
+} 
+
+
+
+#gameboard2 div {
+	position:absolute;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;    
+	box-sizing: border-box;         
+	border: 1px solid rgb(4, 2, 153);
+	background-color: rgb(13, 139, 223);
+	
+	width:40px;
+	height:40px;
+}
+
+#gameboard1 .bateau{
+	background-color: springgreen;
+}
+
+
+/* #plateau{
+	display: flex;
+	
+	background-color: blueviolet;
+	border: solid black 3px;
+	
+	height: 100px;
+	width: 500px;
+}
+
+.square{
+	width: 125px;
+	height: 5Opx;
+	background-color: coral;
+	border: 2px solid black;
+} */
+
+
+/* =======================================
+	Ships
+   ======================================= */
+
+   #destroyer{
+	   position: relative;
+	   width: 80px;
+	   height:40px;
+	   background-color: midnightblue;
+
+   }
+
+   #cruiser{
+	position: relative;
+	width: 120px;
+	height:40px;
+	background-color: green;
+
+   }
+
+   #submarine{
+	position: relative;
+	width: 120px;
+	height:40px;
+	background-color: violet;
+	   
+   }
+
+   #battleship{
+	position: relative;
+	width: 160px;
+	height:40px;
+	background-color: yellow;
+	   
+   }
+
+   #carrier{
+	position: relative;
+	width: 200px;
+	height:40px;
+	background-color: salmon;
+	   
+   }
+>>>>>>> add boats on .html + add a five squared boat on click; numerical ids on both grid, + test dragndrop
