@@ -1,0 +1,77 @@
+
+@font-face{
+    font-family: "Retro_Gaming";
+    src: url("../Font/Retro_Gaming.ttf");
+}
+
+body{
+    font-size: 16px;
+    font-family: "Retro_Gaming";
+    background-image: url(../IMG/ocean.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main, h2{
+    letter-spacing: 2px;
+    text-align: center;
+    letter-spacing: 1%;
+    text-transform: uppercase;
+    color:#f7c611;
+     /* Ajoute contour aux lettres */
+     /* text-shadow: -1px 0 , 0 1px #FF0000, 1px 0 #FF0000, 0 -1px #FF0000; */
+     text-shadow: 0px 0px , 2px 1px #FF0000, 3px 1px #FF0000, 0 -1px #FF0000;
+}
+
+.main h1{
+    font-size: 3em;
+    margin-top: 10vh;
+}
+
+.main h2{
+    font-size: 1.6em;
+    margin-top: 10vh;
+}
+
+#logo{
+    color: #f7c611;
+    box-shadow: #FF0000;
+}
+
+#boat, #boat_flipped{
+    position: absolute;
+    top: 45vh;
+    width: 8%;
+}
+
+#boat{
+    left: 26vw;
+}
+
+#boat_flipped{
+    right: 25vw;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#input_text{
+    width: 23vw;
+    color: #FF0000;
+    background-color: #f7c611;
+    margin-top: 1vh;
+    border-color: #FF0000;
+}
+
+#submit{
+    width: 15vw;
+    color: #FF0000;
+    background-color: #f7c611;
+    margin-top: 2vh;
+    border-color: #FF0000;
+}
+
+
